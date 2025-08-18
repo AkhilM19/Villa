@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+    }
+    .hero { 
+      background: url('https://via.placeholder.com/1920x800') center/cover no-repeat; 
+      color: white; 
+      position: relative; 
+    }
+    .overlay { 
+      background: rgba(0, 0, 0, 0.5); 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+    }
+    .hero-txt { 
+      position: relative; 
+      z-index: 1; 
+      padding: 150px 20px; 
+    }
+    .stats span { 
+      font-size: 1.5rem; 
+      font-weight: bold; 
+      color: #ff4f00; 
+    }
+    .btn-orange { 
+      background-color: #ff4f00; 
+      color: white; 
+    }
+    .btn-orange:hover { 
+      background-color: #e64500; 
+      color: white; 
+    }
+    .card-prop img { 
+      transition: transform 0.4s ease; 
+    }
+    .card-prop:hover img { 
+      transform: scale(1.05); 
+    }
+     .property-img {
+      border-radius: 6px;
+      width: 350px;
+      height: 400px;
+    }
+
+    /* Small floating icon on image */
+    .image-icon {
+      position: absolute;
+      bottom: -35px;
+      left: -30px;
+      background-color: orangered;
+      border-radius: 50%;
+      padding: 15px;
+      color: white;
+    }
+
+    /* Useful links box */
+    .links-box {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 15px;
+    }
+    .links-box h6 {
+      color: #ff4d00;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .links-box a {
+      text-decoration: none;
+    }
+
+    /* Right info card(features) */
+    .info-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 3px 8px rgba(23, 1, 1, 0.05);
+    }
+    .home-2-img-icon {
+      height: 55px;
+      padding: 5px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      height: 85px;
+      padding: 15px 0;
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .info-item:last-child {
+      border-bottom: none;
+    }
+    .info-title {
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+    .info-sub {
+      color: gray;
+      font-size: 10px;
+    }
+    .bg-video {
+      background: url('images/video-bg.jpg') center/cover no-repeat;
+      position: relative;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; 
+      align-items: center;
+      text-align: center;
+      padding-top: 100px; 
+    }
+    .bg-video::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .bg-video .content {
+      position: relative;
+      z-index: 1;
+    }
+    /* Play button */
+    .play-btn {
+  background-color: rgba(255, 68, 0, 0.9); 
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+.play-btn .triangle {
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 5px;
+}
+
+
+/* BEST DEALS */
+:root{
+      --accent: #f15a24; /* orange accent */
+      --muted: #7a7a7a;
+      --card-bg: #ffffff;
+      --soft-gray: #f6f6f6;
+    }
+    body{
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #fff;
+      color: #222;
+    }
+
+    /* Container spacing */
+    .section-wrap{
+      padding: 60px 0;
+    }
+
+    /* Small label */
+    .small-label{
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+    }
+
+    h1.hero-title{
+      font-size: 36px;
+      line-height: 1.05;
+      font-weight: 800;
+      margin-top: 10px;
+      margin-bottom: 24px;
+    }
+
+    /* Filter buttons top-right */
+    .filters {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .filters .btn {
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-weight:600;
+      box-shadow: none;
+    }
+    .filters .btn--accent{
+      background: var(--accent);
+      color: #fff;
+      border: none;
+    }
+    .filters .btn--dark{
+      background: #111;
+      color: #fff;
+      border: none;
+    }
+
+    /* Left details card (best deals)*/
+    .info-card{
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(28,28,28,0.06);
+      max-width: 260px;
+    }
+    .info-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 10px 6px;
+      border-radius: 8px;
+    }
+    .info-row + .info-row{
+      margin-top: 8px;
+    }
+    .info-label{
+      color: #b7b7b7;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .info-value{
+      color: #222;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    /* center image */
+    .property-img {
+      width:100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+      display:block;
+    }
+
+    /* Right text column & CTA */
+    .extra-info {
+      max-width: 320px;
+    }
+    .extra-info h5 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .extra-info p {
+      color: #6b6b6b;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+  /* calender */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  background: black;
+  color: #fff;
+  border-radius: 25px;
+  padding: 8px 16px 8px 40px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta .fa {
+  background: orangered;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  position: absolute;
+  left: -1px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.cta:hover {
+  background: #333; 
+  transform: translateY(-2px);
+}
+
+.cta:hover .fa {
+  background: #ff5722; 
+  transform: scale(1.1); 
+}
+/* Properties */
+
+    body { 
+      font-family: Arial, sans-serif; 
+    }
+    .card img {
+      transition: transform 0.4s ease;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+  
+  .info-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+  .info-label {
+    margin-right: 30px; 
+  }
+
+    /* Responsive tweaks */
+    @media (max-width: 991px){
+      h1.hero-title { font-size: 30px; }
+      .property-img { height: 280px; }
+      .info-card { margin-bottom: 20px; max-width: none; }
+      .filters { justify-content:center; margin-top: 18px; }
+    }
+    @media (max-width: 575px){
+      .property-img { height: 220px; }
+      .small-label { font-size: 12px; }
+      h1.hero-title { font-size: 24px; }
+    }
+
+
+
+   /* CONTACT INFO */
+   body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    /* Section with background image */
+    .contact-section {
+      background: url('./images/contact-bg.jpg') center/cover no-repeat;
+      position: relative;
+      height: 60vh; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0; 
+    }
+
+    .contact-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+
+    .contact-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-heading small {
+      color: #e63946;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+    }
+
+    .section-heading h2 {
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* Wrapper to pull content on top of background */
+    .contact-wrapper {
+      margin-top: -150px; 
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Map */
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Contact form */
+    .contact-form {
+      padding: 25px;
+      height: 400px; /* match map height */
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Bottom Info Cards */
+    .contact-info {
+      margin-top: -40px; /* Pull cards closer to bottom of map */
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      width: 230px; /* Slightly smaller for compact fit */
+      margin: 0 auto; /* Center cards */
+    }
+
+    .contact-card i {
+      font-size: 24px;
+      color: #e63946;
+      margin-right: 12px;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-custom {
+      background-color: #2d2d2d;
+      color: #fff;
+      border-radius: 50px;
+      padding: 10px 25px;
+    }
+
+    .btn-custom:hover {
+      background-color: #e63946;
+      color: #fff;
+    }
+     footer {
+      margin-top: 60px;
+      padding: 20px 0;
+      background: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  
+
+<!-- Top Bar -->
+<div class="bg-light py-1 small">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <i class="fa-solid fa-envelope text-danger me-2"></i> info@villa.co
+      <i class="fa-solid fa-location-dot text-danger ms-4 me-2"></i> Sunny Isles Beach, FL 33160
+    </div>
+    <div>
+      <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="text-dark"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">VILLA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link text-danger fw-bold" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+        <li class="nav-item"><a class="nav-link" href="P details.html">Property Details</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        <li class="nav-item ms-lg-3">
+          <a class="cta" href="#">
+            <span class="fa fa-calendar"></span>
+            Schedule a visit
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/banner-01.jpg" class="d-block w-100" alt="...">
+      
+      <!-- TEXT OVERLAY -->
+      <div class="carousel-caption text-start">
+        <p class="mb-1">
+          <span class="bg-white text-dark px-2 py-1 rounded">Toronto, <span class="text-danger">Canada</span></span>
+        </p>
+        <h1 class="fw-bold text-white">HURRY!<br>GET THE BEST<br>VILLA FOR YOU</h1>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/banner-02.jpg" class="d-block w-100" alt="...">
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/banner-03.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+<!-- Featured Property -->
+<div style="margin-bottom: 50px;" class="container py-5">
+  <div class="row align-items-start">
+
+    <!-- Left image -->
+    <div class="col-md-4 position-relative p-0">
+  <img src="images/featured.jpg" alt="Apartment" class="img-fluid w-90 rounded">
+  
+  
+
+      <div class="image-icon">
+        <img src="images/featured-icon.png" alt="">
+      </div>
+    </div>
+
+    <!-- Middle text -->
+    <div class="col-md-5">
+      <p class="text-danger fw-bold mb-1">| FEATURED</p>
+      <h2 class="fw-bold">Best Apartment<br>& Sea View</h2>
+
+      <div class="links-box">
+        <h6>Best useful links ?</h6>
+        <hr>
+        <p>
+          Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap for your business.
+          XYZ provides you the best service in the world. Please tell your friends about it.
+        </p>
+
+        <!-- Accordion starts here -->
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How does this work?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                This section explains the process of how our villa services operate step-by-step.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Why is Villa Agency the best?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                We provide unmatched quality, best locations, and customer-focused services.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Right info card -->
+ 
+
+    <div class="col-md-3">
+      <div class="info-card">
+        <div class="info-item">
+          <img class="home-2-img-icon" src="images/info-icon-01.png" alt="">
+          <div>
+            <div class="info-title">250 m²</div>
+            <div class="info-sub">Total Flat Space</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <img  class="home-2-img-icon" src="images/info-icon-02.png" alt="">
+          <div>
+            <div class="info-title"> Contract</div>
+            <div class="info-sub">Contract Ready</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <img class="home-2-img-icon" src="images/info-icon-03.png" alt="">
+          <div>
+            <div class="info-title">Payment</div>
+            <div class="info-sub">Payment Process</div>
+          </div>
+        </div>
+
+        <div  class="info-item">
+          <img class="home-2-img-icon" src="images/info-icon-04.png" alt="">
+          <div>
+            <div class="info-title">Safety</div>
+            <div class="info-sub">24/7 Under Control</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- Video Section -->
+<!-- Background Section with Text Shifted Up -->
+<section class="bg-video text-white">
+  <div class="content">
+    <p class="text-uppercase fw-semibold mb-3" style="color: #ff5722; font-size: 13px; letter-spacing: 1px;">
+      | Video View
+    </p>
+    <h2 style="font-size: 40px;" class="fw-bold mb-0">Get Closer View &<br>Different Feeling</h2>
+  </div>
+</section>
+
+<!-- Video Frame (Pulled Up) -->
+<div class="container position-relative" style="margin-top: -180px;">
+  <div class="bg-white rounded shadow overflow-hidden mx-auto" style="max-width: 900px;">
+    <div class="position-relative">
+      <img src="images/video-frame.jpg" class="img-fluid" alt="Video Thumbnail">
+      <button class="play-btn position-absolute top-50 start-50 translate-middle">
+        <span class="triangle"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Stats Section -->
+<div class="container my-5">
+  <div class="row g-5 justify-content-center">
+    
+    <div class="col-6 col-md-3">
+      <div class="rounded position-relative d-flex justify-content-center align-items-center px-4" 
+           style="background-color: #ffe5db; height: 100px;">
+        <span class="rounded-circle position-absolute top-0 start-100 translate-middle" 
+              style="width: 50px; height: 50px; background-color: orangered;"></span>
+        <div class="d-flex align-items-center">
+          <div class="fs-2 fw-bolder me-4" style="color: orangered;">34</div>
+          <div class="fw-semibold text-start">
+            Buildings<br>Finished Now
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="rounded position-relative d-flex justify-content-center align-items-center px-4" 
+           style="background-color: #ffe5db; height: 100px;">
+        <span class="rounded-circle position-absolute top-0 start-100 translate-middle" 
+              style="width: 50px; height: 50px; background-color: orangered;"></span>
+        <div class="d-flex align-items-center">
+          <div class="fs-2 fw-bolder me-4" style="color: orangered;">12</div>
+          <div class="fw-semibold text-start">
+            Years<br>Experience
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="rounded position-relative d-flex justify-content-center align-items-center px-4" 
+           style="background-color: #ffe5db; height: 100px;">
+        <span class="rounded-circle position-absolute top-0 start-100 translate-middle" 
+              style="width: 50px; height: 50px; background-color: orangered;"></span>
+        <div class="d-flex align-items-center">
+          <div class="fs-2 fw-bolder me-4" style="color: orangered;">24</div>
+          <div class="fw-semibold text-start">
+            Awards<br>Won 2023
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!-- Best Deal -->
+<div class="container section-wrap">
+    <div class="row align-items-center mb-4">
+      <div class="col-lg-7">
+        <div class="small-label">| BEST DEAL</div>
+        <h1 class="hero-title">Find Your Best Deal<br>Right Now!</h1>
+      </div>
+      <div class="col-lg-5">
+        <div class="filters">
+          <button class="btn btn--accent">Appartment</button>
+          <button class="btn btn--dark">Villa House</button>
+          <button class="btn btn--dark">Penthouse</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gy-4 align-items-center">
+      <!-- Left details card -->
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-start">
+  <div class="info-card">
+    <div class="info-row" style="background: var(--soft-gray);">
+      <div class="info-label">Total Flat Space</div>
+      <div class="info-value">185 m2</div>
+    </div>
+
+    <div class="info-row">
+      <div class="info-label">Floor number</div>
+      <div class="info-value">26th</div>
+    </div>
+
+    <div class="info-row" style="background: var(--soft-gray);">
+      <div class="info-label">Number of rooms</div>
+      <div class="info-value">4</div>
+    </div>
+
+    <div class="info-row">
+      <div class="info-label">Parking Available</div>
+      <div class="info-value">Yes</div>
+    </div>
+
+    <div class="info-row" style="background: var(--soft-gray);">
+      <div class="info-label">Payment Process</div>
+      <div class="info-value">Bank</div>
+    </div>
+  </div>
+</div>
+
+      <!-- Center image -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <img src="images/deal-01.jpg" alt="Property" class="property-img">
+      </div>
+
+      <!-- Right text and CTA -->
+      <div class="col-md-3 d-flex justify-content-center justify-content-md-end">
+        <div class="extra-info">
+          <h5>Extra Info About Property</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse.
+          </p>
+
+          <p style="color:#6b6b6b; margin-bottom:20px;">
+            When you need best websites, you can simply type XYZ in any search engine website. In addition, you can type XYZ Portfolio, XYZ One Page Layouts, etc.
+          </p>
+
+          <a class="cta" href="#">
+            <span class="fa fa-calendar"></span>
+            Schedule a visit
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Property Listings -->
+<body class="bg-light">
+
+<div class="container py-5">
+  
+  <!-- Section Heading -->
+  <div class="text-center mb-5">
+    <p class="text-danger fw-semibold small mb-1">| PROPERTIES</p>
+    <h2 class="fw-bold">We Provide The Best<br> Property You Like</h2>
+  </div>
+  
+  <!-- Properties -->
+<div class="container">
+  <div class="row g-4">
+
+    
+    <!-- Card 1 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="images/property-01.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#ffe7e0; color:#ff4f00;">Luxury Villa</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$2,264,000</h5>
+          <p class="fw-bold mb-1">18 Old Street Miami, OR 97219</p>
+          <small class="text-muted">Bedrooms: 8 • Bathrooms: 8 • Area: 545m² • Floor: 3 • Parking: 6 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="images/property-02.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0f7ff; color:#007bff;">Apartment</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$1,120,000</h5>
+          <p class="fw-bold mb-1">45 Ocean Drive, Miami, FL</p>
+          <small class="text-muted">Bedrooms: 4 • Bathrooms: 3 • Area: 320m² • Floor: 5 • Parking: 2 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="images/property-03.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0ffe5; color:#28a745;">Penthouse</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$3,500,000</h5>
+          <p class="fw-bold mb-1">99 Downtown Street, NY</p>
+          <small class="text-muted">Bedrooms: 6 • Bathrooms: 5 • Area: 720m² • Floor: 10 • Parking: 4 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="images/property-04.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#ffe7e0; color:#ff4f00;">Luxury Villa</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$1,980,000</h5>
+          <p class="fw-bold mb-1">120 Palm Beach, FL</p>
+          <small class="text-muted">Bedrooms: 5 • Bathrooms: 4 • Area: 450m² • Floor: 2 • Parking: 3 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="images/property-05.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0f7ff; color:#007bff;">Apartment</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$880,000</h5>
+          <p class="fw-bold mb-1">500 Brickell Ave, Miami</p>
+          <small class="text-muted">Bedrooms: 3 • Bathrooms: 2 • Area: 210m² • Floor: 8 • Parking: 1 spot</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="images/property-06.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0ffe5; color:#28a745;">Penthouse</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$2,750,000</h5>
+          <p class="fw-bold mb-1">15 Central Park, NY</p>
+          <small class="text-muted">Bedrooms: 4 • Bathrooms: 4 • Area: 500m² • Floor: 12 • Parking: 2 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+<!-- Contact -->
+ <!-- Background Section -->
+  <section class="bg-video text-white">
+  <div class="content">
+    <p class="text-uppercase fw-semibold mb-3" style="color: #ff5722; font-size: 13px; letter-spacing: 1px;">
+      | Video View
+    </p>
+    <h2 style="font-size: 40px;" class="fw-bold mb-0">Get Closer View &<br>Different Feeling</h2>
+  </div>
+</section>
+
+  <!-- Map & Form on top of Background -->
+  <div class="container contact-wrapper">
+    <div class="row g-4 align-items-stretch">
+      <!-- Map -->
+      <div class="col-lg-6 map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.191027212345!2d-80.123456!3d25.950123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1234567890abcdef!2sSunny%20Isles%20Beach!5e0!3m2!1sen!2sus!4v1692300000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-6">
+        <div class="contact-form">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Full Name...">
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email Address...">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Subject...">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info Cards (closer under map) -->
+    <div class="row g-2 mt-3 contact-info justify-content-start">
+      <!-- Phone Card -->
+      <div class="col-md-3">
+        <div class="contact-card">
+          <!-- Image instead of icon -->
+          <img src="images/phone-icon.png" alt="Phone Icon" style="width:35px; height:35px; margin-right:12px;">
+          <div>
+            <h6 class="mb-0">010-020-0340</h6>
+            <small class="text-muted">Phone Number</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Card -->
+      <div class="col-md-3">
+        <div class="contact-card">
+          <!-- Image instead of icon -->
+          <img src="images/email-icon.png" alt="Email Icon" style="width:35px; height:35px; margin-right:12px;">
+          <div>
+            <h6 class="mb-0">info@villa.co</h6>
+            <small class="text-muted">Business Email</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="text-center">
+  <div class="container">
+    <small>Copyright © 2048 Villa Agency Co., Ltd. All rights reserved. Design: M.AKHIL</small>
+  </div>
+</footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
